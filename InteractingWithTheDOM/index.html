@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interacting With The DOM Test Page</title>
+</head>
+
+<body>
+    <h1>Welcome to My JavaScript Test Page</h1>
+
+    <form action="">
+        <label for="firstName">First Name: </label>
+        <input type="text" id="firstName" placeholder="ex: John">
+        <label for="lastName">Last Name: </label>
+        <input type="text" id="lastName" placeholder="ex: Doe">
+        <label for="email">Email: </label>
+        <input type="email" id="email" placeholder="ex: JohnDoe@email.com">
+        <button id="submitButton">Submit!</button>
+
+        <ol>
+            <li>apples</li>
+            <li>oranges</li>
+            <li>bananas</li>
+        </ol>
+
+        <p class="paragraph">I am a paragraph. You can tell because I have more than one sentence. We usually consist of
+            anywhere between 2 and 4 sentences; however, some of my family members have been known to contain many more
+            sentences than that.</p>
+
+        <p id="paragraph">I am a sentence hiding in a paragraph tag!</p>
+
+        <div id="container"></div>
+
+        <input type="text" id="message">
+        <div id="output"></div>
+
+        <div id="div1">
+            <p id="p1">Hi! I'm a paragraph.</p>
+            <p id="p2">Hello! I'm another paragraph.</p>
+        </div>
+
+        <script>
+            var parentNode = document.getElementById('div1');
+            var childNode = document.getElementById('p1');
+            parentNode.removeChild(childNode);
+        </script>
+
+        <button onclick="addChild()">Add a div element to the container!</button>
+        <div id="container">
+            <script>
+                function addChild() {
+                    let newElem = document.createElement('div');
+                    newElem.innerHTML = "This is a new Element created by appendChild()";
+
+                    let container = document.getElementById('container');
+                    container.appendChild(newElem);
+                }
+            </script>
+        </div>
+
+        <p>Click the button to remove the first item from the list.</p>
+        <ul id="myList"><li>JavaScipt</li><li>C#</li><li>Java</li><li>Python</li><li>Ruby</li></ul>
+        <button onclick="myFunction()">Try it</button>
+
+        <script>
+            function myFunction() {
+                var list = document.getElementById('myList');
+                list.removeChild(list.childNodes[0]);
+            }
+        </script>
+
+        <br>
+
+        <label for="phNumber">Number: </label>
+        <input type="text" id="phNumber">
+        <p>(xxxx) xxx-xxxx</p>
+        <button onclick="phoneNumberFormat()">Submit</button>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
